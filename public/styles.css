@@ -1,0 +1,142 @@
+/* Reset some defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background-color: #f8f8f8;
+  padding: 0;
+  margin: 0;
+}
+
+/* Top navigation */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.top h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Icon menu */
+.icon-menu {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+}
+
+.icon-item img {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 5px;
+}
+
+.icon-item.active p {
+  color: #ff914d;
+}
+
+/* Post card layout */
+.post-card {
+  display: flex;
+  background-color: #fff8ec;
+  margin: 12px 10px;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Left Content */
+.card-content {
+  flex: 1;
+}
+
+.card-content h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.card-content p {
+  font-size: 13px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+/* Project/Years/Price section */
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.details-row div {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.details-row span {
+  font-size: 11px;
+  font-weight: normal;
+  color: #666;
+}
+
+/* Contact */
+.contact-info {
+  font-size: 13px;
+  color: #333;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* Vertical Separator */
+.vertical-line {
+  width: 1px;
+  background-color: #ccc;
+  margin: 0 10px;
+}
+
+/* Right Actions */
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-actions div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6px 0;
+  font-size: 11px;
+  color: #b65f2d;
+  cursor: pointer;
+}
+
+.card-actions i {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
