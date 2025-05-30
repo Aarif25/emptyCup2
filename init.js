@@ -30,4 +30,3 @@ let posts = [
     }
 ]
 Post.insertMany(posts);
-   

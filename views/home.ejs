@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EmptyCup</title>
     <link rel="stylesheet" href="/styles.css" />
-    <!-- Consider adding a link to a font library if 'Inter' is not locally available or a system font -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
+    
     <header class="header">
         <img src="/icons/logo.png" alt="EmptyCup Logo" class="logo-img" />
         <h1 class="header-title">EmptyCup</h1>
@@ -22,7 +22,7 @@
         </div>
     </header>
 
-    <!-- Icon Menu -->
+    
     <nav class="icon-nav">
         <div class="icon-item active" role="button" tabindex="0">
             <img src="./icons/contacts.png" alt="Contacts Icon" />
@@ -47,7 +47,7 @@
     </nav>
 
     <main class="content-area">
-        <!-- Cards -->
+        
         <% if (typeof posts !== 'undefined' && posts.length > 0) { %>
             <% posts.forEach(post => { %>
             <article class="card">
@@ -79,7 +79,7 @@
                             <% if (post.alternate_contact) { %>
                                 <p>+91 - <%= post.alternate_contact %></p>
                             <% } else { %>
-                                <p>+91 - <%= post.contact %></p> <% /* Repeat if no alternate */ %>
+                                <p>+91 - <%= post.contact %></p> 
                             <% } %>
                         <% } else { %>
                             <p>Contact not available</p>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="action-item" role="button" tabindex="0">
                         <img src="/icons/hide.png">
-                        <!-- Assuming an icon for Hide, e.g., eye-slash. Using text for now. -->
+                        
                         <span>Hide</span>
                     </div>
                     <div class="action-item shortlist-action" role="button" tabindex="0" data-post-id="<%= post._id %>">
@@ -103,7 +103,7 @@
                     </div>
                     <div class="action-item" role="button" tabindex="0">
                         <img src="/icons/report.png">
-                        <!-- Assuming an icon for Report, e.g., flag. Using text for now. -->
+                        
                         <span>Report</span>
                     </div>
                 </aside>
