@@ -1,84 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EmptyCup</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="/styles.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EmptyCup</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Consider adding a link to a font library if 'Inter' is not locally available or a system font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <img src="/icons/logo.png" alt="EmptyCup Logo" class="logo-img" />
+        <h1 class="header-title">EmptyCup</h1>
+        <div class="menu-dots" aria-label="Menu" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
 
-  <div class="top">
-    <i>logo</i>
-    <h1>EmptyCup</h1>
-    <i class="fas fa-ellipsis-v"></i>
-  </div>
+    <!-- Icon Menu -->
+    <nav class="icon-nav">
+        <div class="icon-item active" role="button" tabindex="0">
+            <img src="./icons/contacts.png" alt="Contacts Icon" />
+            <p>Contacts</p>
+        </div>
+        <div class="icon-item" role="button" tabindex="0">
+            <img src="./icons/gallery.png" alt="Gallery Icon" />
+            <p>Gallery</p>
+        </div>
+        <div class="icon-item" role="button" tabindex="0">
+            <img src="/icons/map.png" alt="Map Icon" />
+            <p>Map</p>
+        </div>
+        <div class="icon-item" role="button" tabindex="0">
+            <img src="/icons/shortlisted.png" alt="Shortlisted Icon" />
+            <p>Shortlisted</p>
+        </div>
+        <div class="icon-item" role="button" tabindex="0">
+            <img src="/icons/sort.png" alt="Sort Icon" />
+            <p>Sort</p>
+        </div>
+    </nav>
 
-  <div class="icon-menu">
-    <div class="icon-item active">
-      <img src="/icons/contacts.png" alt="Contacts" />
-      <p>Contacts</p>
-    </div>
-    <div class="icon-item">
-      <img src="/icons/gallery.png" alt="Gallery" />
-      <p>Gallery</p>
-    </div>
-    <div class="icon-item disabled">
-      <img src="/icons/map.png" alt="Map" />
-      <p>Map</p>
-    </div>
-    <div class="icon-item">
-      <img src="/icons/shortlist.png" alt="Shortlisted" />
-      <p>Shortlisted</p>
-    </div>
-    <div class="icon-item">
-      <img src="/icons/sort.png" alt="Sort" />
-      <p>Sort</p>
-    </div>
-  </div>
+    <main class="content-area">
+        <!-- Cards -->
+        <% if (typeof posts !== 'undefined' && posts.length > 0) { %>
+            <% posts.forEach(post => { %>
+            <article class="card">
+                <div class="card-content">
+                    <h3 class="card-title"><%= post.title || "Sample Title" %></h3>
+                    <div class="stars" aria-label="Rating: <%= Math.round(post.rating || 0) %> out of 5 stars">
+                        <% const rating = Math.min(5, Math.max(0, Math.round(post.rating || 0))); %>
+                        <% for(let i = 0; i < rating; i++) { %><span class="filled-star" aria-hidden="true">★</span><% } %>
+                        <% for(let i = rating; i < 5; i++) { %><span class="empty-star" aria-hidden="true">☆</span><% } %>
+                    </div>
+                    <p class="description"><%= post.description || "No description available." %></p>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <span class="number"><%= post.project || "N/A" %></span>
+                            <span class="label">Projects</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="number"><%= post.years || "N/A" %></span>
+                            <span class="label">Years</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="number"><%= post.price || "N/A" %></span>
+                            <span class="label">Price</span>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <% if (post.contact) { %>
+                            <p>+91 - <%= post.contact %></p>
+                            <% if (post.alternate_contact) { %>
+                                <p>+91 - <%= post.alternate_contact %></p>
+                            <% } else { %>
+                                <p>+91 - <%= post.contact %></p> <% /* Repeat if no alternate */ %>
+                            <% } %>
+                        <% } else { %>
+                            <p>Contact not available</p>
+                        <% } %>
+                    </div>
+                </div>
+                <aside class="card-actions">
+                    <div class="action-item" role="button" tabindex="0">
+                        <img src="/icons/arrow.png">
+                        <span>Details</span> 
+                    </div>
+                    <div class="action-item" role="button" tabindex="0">
+                        <img src="/icons/hide.png">
+                        <!-- Assuming an icon for Hide, e.g., eye-slash. Using text for now. -->
+                        <span>Hide</span>
+                    </div>
+                    <div class="action-item" role="button" tabindex="0">
+                        <img src="/icons/vector.png">
+                        <!-- Assuming an icon for Shortlist, e.g., heart. Using text for now. -->
+                        <span>Shortlist</span>
+                    </div>
+                    <div class="action-item" role="button" tabindex="0">
+                        <img src="/icons/report.png">
+                        <!-- Assuming an icon for Report, e.g., flag. Using text for now. -->
+                        <span>Report</span>
+                    </div>
+                </aside>
+            </article>
+            <% }); %>
+        <% } else { %>
+            <p style="text-align: center; padding: 20px;">No posts available at the moment.</p>
+        <% } %>
+    </main>
 
-  <% for (let post of posts) { %>
-    <div class="post-card">
-      <div class="card-content">
-        <h3><%= post.title %></h3>
-        <p>⭐⭐⭐⭐☆</p>
-        <p><%= post.description %></p>
-        <div class="details-row">
-          <div><%= post.project %><br><span>Projects</span></div>
-          <div><%= post.years %><br><span>Years</span></div>
-          <div><%= post.price %><br><span>Price</span></div>
-        </div>
-        <div class="contact-info">
-          +91 - <%= post.contact %><br>
-          +91 - <%= post.contact %>
-        </div>
-      </div>
-      <div class="vertical-line"></div>
-      <div class="card-actions">
-        <div>
-          <i class="fas fa-arrow-right"></i>
-          <p>Details</p>
-        </div>
-        <div>
-          <i class="fas fa-eye-slash"></i>
-          <p>Hide</p>
-        </div>
-        <div>
-          <button>
-          <i class="fas fa-bookmark"></i>
-          <p>Shortlist</p>
-          </button>
-        </div>
-        <div>
-          <i class="fas fa-exclamation-circle"></i>
-          <p>Report</p>
-        </div>
-      </div>
-    </div>
-  <% } %>
 
+    <script src="/js/main.js" defer></script>
 </body>
 </html>
