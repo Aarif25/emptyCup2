@@ -96,9 +96,9 @@
                         <!-- Assuming an icon for Hide, e.g., eye-slash. Using text for now. -->
                         <span>Hide</span>
                     </div>
-                    <div class="action-item" role="button" tabindex="0">
-                        <img src="/icons/vector.png">
-                        <!-- Assuming an icon for Shortlist, e.g., heart. Using text for now. -->
+                    <div class="action-item shortlist-action" role="button" tabindex="0" data-post-id="<%= post._id %>">
+                        <img src="/icons/bookmark.png" alt="Shortlist" class="shortlist-icon icon-shortlist-default">
+                        <img src="/icons/vector.png" alt="Shortlisted" class="shortlist-icon icon-shortlist-filled">
                         <span>Shortlist</span>
                     </div>
                     <div class="action-item" role="button" tabindex="0">

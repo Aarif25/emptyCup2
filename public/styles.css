@@ -36,6 +36,7 @@ body {
   color: #2C3E50; /* Dark blue/grey for title */
   margin-left: 8px; /* Adjusted margin */
   flex-grow: 1;
+  text-align: center; /* Center the title */
 }
 
 .header .menu-dots {
@@ -249,6 +250,27 @@ body {
 .card .card-actions .action-item .arrow::before {
     content: '›'; /* Chevron right arrow */
     line-height: 1; /* Ensure proper alignment */
+}
+
+/* Shortlist icon states */
+.card .card-actions .action-item img.shortlist-icon { /* General style for icons in action items */
+  width: 20px; /* Consistent with other nav icons */
+  height: 20px; /* Consistent with other nav icons */
+  margin-bottom: 4px; /* Space between icon and text */
+}
+
+.card .card-actions .action-item .icon-shortlist-default {
+  display: inline-block;
+}
+.card .card-actions .action-item .icon-shortlist-filled {
+  display: none;
+}
+
+.card .card-actions .action-item.is-shortlisted .icon-shortlist-default {
+  display: none;
+}
+.card .card-actions .action-item.is-shortlisted .icon-shortlist-filled {
+  display: inline-block;
 }
 
 /* Fallback for FontAwesome if used for stars, though EJS uses text characters */

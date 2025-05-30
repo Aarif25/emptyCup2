@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const iconNavItems = document.querySelectorAll('.icon-nav .icon-item');
-    const allPostCards = document.querySelectorAll('.post-card');
+    const allPostCards = document.querySelectorAll('.card'); // Changed .post-card to .card
     let isShortlistFilterActive = false;
 
     function updatePostVisibility() {
@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const actionItem = event.target.closest('.action-item');
             if (!actionItem) return;
 
-            const postCard = actionItem.closest('.post-card'); // Target .post-card for shortlist status
-            if (!postCard) return; // Ensure action is within a .post-card
+            const postCard = actionItem.closest('.card'); // Changed .post-card to .card
+            if (!postCard) return; // Ensure action is within a .card
 
             const cardTitleElement = postCard.querySelector('.card-title');
             const cardName = cardTitleElement ? cardTitleElement.textContent.trim() : "Unknown Post";
