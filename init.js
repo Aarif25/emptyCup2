@@ -13,20 +13,35 @@ async function main() {
     await mongoose.connect('mongodb://127.0.0.1:27017/emptycup');
 };
 let posts = [
-    {
-        title : "first",
-        description : "a",
-        project : 10,
-        years : 4,
-        contact : 6260696370
+    
+{
+    title : "Software Engineer",
+    description: "Developed scalable backend systems using Node.js and MongoDB.",
+    project: 15,
+    years: 5,
+    contact: 9876543210
+},
+{
+    title: "Data Analyst",
+    description: "Analyzed large datasets to drive business insights using Python and SQL.",
+    project: 9,
+    years: 3,
+    contact: 9123456789
+},
+{
+    title: "UI/UX Designer",
+    description: "Designed user-centric interfaces for mobile and web applications.",
+    project: 12,
+    years: 4,
+    contact: 9988776655
+},
+{
+    title: "DevOps Engineer",
+    description: "Implemented CI/CD pipelines and managed cloud infrastructure on AWS.",
+    project: 10,
+    years: 6,
+    contact: 9012345678
+}
 
-    },
-    {
-        title : "second",
-        description : "b",
-        project : 55,
-        years : 3,
-        contact : 626069656
-    }
 ]
 Post.insertMany(posts);
