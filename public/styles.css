@@ -119,10 +119,10 @@ body {
 .card {
   display: flex;
   
-  margin: 12px 8px; 
-  padding: 14px; 
-  border-radius: 8px; 
-  box-shadow: 0 2px 4px rgba(0,0,0,0.07); 
+  margin: 16px 8px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
   position: relative;
 }
 
@@ -215,9 +215,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around; 
-  padding-left: 12px; 
-  width: 70px; 
-  border-left: 1px solid #ECF0F1; 
+  padding-left: 12px;
+  width: 70px;
 }
 
 .card .card-actions .action-item {
